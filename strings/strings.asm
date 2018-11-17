@@ -73,7 +73,8 @@ _start:						;start the program
 	mov	edx,s2len
 	int 	80h
 
-
+						;compare str1 with str2
+	
 
 
 
