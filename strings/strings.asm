@@ -1,9 +1,9 @@
 ; Using Strings
 ; Each string instruction may require a source operand, a destination operand or both. 
-; For 32-bit segments, string instructions use ESI and EDI to point to the source and destination
+; For 32-bit sections, string instructions use ESI and EDI to point to the source and destination
 ; operands, respectively.
 ;
-; For 16-bit segments, however, the SI and DI are used.
+; For 16-bit sections, however, the SI and DI are used.
 ;
 ; There are as far as I know 5 basic instructions for string processing:
 ; - MOVS - This instruction moves 1 Byte, Word or Doubleword of data from one memory location
@@ -41,7 +41,7 @@
 ; - REPE or REPZ: Conditional REP. Repeats until CX is zero or ZF indicates zero/equal.
 ; - REPNE or REPNZ: Conditional REP. Repeats until CX is zero or ZF indicates not zero/not equal
 ;
-segment	.data
+section	.data
 	msg1	db 13,10,"The strings are equal.",13,10
 	m1len	equ $-msg1
 	msg2	db 13,10, "The strings are not equal",13,10
@@ -53,9 +53,9 @@ segment	.data
 	str3	db "This is another string in memory.",13,10,0
 	s3len	equ $-str3-1
 
-segment	.bss
+section	.bss
 
-segment .text
+section .text
 	global _start				;tell the linker where to start
 
 _start:						;start the program
